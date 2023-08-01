@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import Book, Author
 from .forms import BookForm, AuthorForm
+from .models import Book, Author
 
 def input_page(request):
     if request.method == 'POST':
