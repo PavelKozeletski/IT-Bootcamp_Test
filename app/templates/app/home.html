@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <p><a href="{% url 'input_author' %}">Input Author</a></p>
+    <p><a href="{% url 'input_page' %}">Input Book</a></p>
+    <p><a href="{% url 'get_books' %}">Get Books</a></p>
+    <p><a href="{% url 'get_authors' %}">Get Authors</a></p>
+    <p><a href="{% url 'home' %}">Refresh</a></p>
+
+    {% if book_list %}
+        <h2>Book List:</h2>
+        <ul>
+            {% for book in book_list %}
+                <li>{{ book }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if author_list %}
+        <h2>Author List:</h2>
+        <ul>
+            {% for author in author_list %}
+                <li>{{ author }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

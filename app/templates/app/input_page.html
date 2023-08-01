@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Book</title>
+</head>
+<body>
+    <h1>Input Information</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+
+    <p><a href="{% url 'home' %}">Back to Home</a></p>
+</body>
+</html>
