@@ -7,4 +7,5 @@ urlpatterns = [
     path('get_authors/', views.get_authors, name='get_authors'),
     path('input/', views.input_page, name='input_page'),
     path('input_author/', views.input_author, name='input_author'),
+    path('app/get_book_authors/', views.get_book_authors, name='get_book_authors'),
 ]

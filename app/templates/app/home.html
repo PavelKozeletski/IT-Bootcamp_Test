@@ -9,6 +9,7 @@
     <p><a href="{% url 'input_page' %}">Input Book</a></p>
     <p><a href="{% url 'get_books' %}">Get Books</a></p>
     <p><a href="{% url 'get_authors' %}">Get Authors</a></p>
+    <p><a href="{% url 'get_book_authors' %}">Get Book: Authors</a></p>
     <p><a href="{% url 'home' %}">Refresh</a></p>
 
     {% if book_list %}
@@ -27,6 +28,15 @@
                 <li>{{ author }}</li>
             {% endfor %}
         </ul>
+    {% endif %}
+
+    {% if book_author_list %}
+    <h2>Book with Authors:</h2>
+    <ul>
+        {% for book_author in book_author_list %}
+        <li>{{ book_author }}</li>
+        {% endfor %}
+    </ul>
     {% endif %}
 </body>
 </html>

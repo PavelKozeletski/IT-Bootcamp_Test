@@ -58,3 +58,8 @@ def get_authors(request):
     authors = Author.objects.all()
     author_list = [author.name for author in authors]
     return render(request, 'app/home.html', {'author_list': author_list})
+
+def get_book_authors(request):
+    books = Book.objects.all()
+    book_author_list = [f"{book.title}: {', '.join(author.name for author in book.authors.all())}" for book in books]
+    return render(request, 'app/home.html', {'book_author_list': book_author_list})
